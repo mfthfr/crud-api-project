@@ -18,7 +18,7 @@ Route::middleware('auth:sanctum')->group(function() {
     Route::apiResource('/users', UserController::class);
     
     // Search Endpoints
-    // Route::get('/search/nama', [SearchController::class, 'byNama']); // /api/search/nama
-    // Route::get('/search/nim', [SearchController::class, 'byNim']); // /api/search/nim
-    // Route::get('/search/ymd', [SearchController::class, 'byYmd']); // /api/search/ymd
+    Route::get('/search/nama', [SearchController::class, 'searchByName']);
+    Route::get('/search/nim', [SearchController::class, 'searchByNim']);
+    Route::get('/search/ymd', [SearchController::class, 'searchByYmd']);
 });
