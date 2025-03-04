@@ -29,6 +29,7 @@ class UserController extends Controller
             ], [
                 'name.required' => 'Nama wajib diisi!',
                 'email.required' => 'Email wajib diisi!',
+                'email.unique' => 'Email sudah digunakan!',
                 'password.min' => 'Password minimal 8 karakter'
             ]);
 
@@ -73,6 +74,7 @@ class UserController extends Controller
             ], [
                 'name.required' => 'Nama wajib diisi!',
                 'email.required' => 'Email wajib diisi!',
+                'email.unique' => 'Email sudah digunakan!',
                 'password.min' => 'Password minimal 8 karakter'
             ]);
 

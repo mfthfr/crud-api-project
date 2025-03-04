@@ -56,11 +56,14 @@ class SearchController extends Controller
             });
 
             // hanya mengambil field nama
-            $names = array_map(function ($item){
-                return $item['NAMA'];
-            }, array_values($filtered));
+            // $names = array_map(function ($item){
+            //     return $item['NAMA'];
+            // }, array_values($filtered));
 
-            return $this->jsonResponse('success', 'Berhasil mengambil data', $names);
+            // hasil pencarian
+            $results = array_values($filtered);
+
+            return $this->jsonResponse('success', 'Berhasil mengambil data', $results);
         } catch (\Exception $e) {
             return $this->jsonResponse('error', 'Terjadi kesalahan pada server', $e->getMessage(), 500);
         }
@@ -88,11 +91,14 @@ class SearchController extends Controller
             });
 
             // hanya mengambil field nim
-            $nims = array_map(function ($item){
-                return $item['NIM'];
-            }, array_values($filtered));
+            // $nims = array_map(function ($item){
+            //     return $item['NIM'];
+            // }, array_values($filtered));
 
-            return $this->jsonResponse('success', 'Berhasil mengambil data', $nims);
+            // hasil pencarian
+            $results = array_values($filtered);
+
+            return $this->jsonResponse('success', 'Berhasil mengambil data', $results);
         } catch (\Exception $e) {
             return $this->jsonResponse('error', 'Terjadi kesalahan pada server', $e->getMessage(), 500);
         }
@@ -120,11 +126,13 @@ class SearchController extends Controller
             });
 
             // hanya mengambil field ymd
-            $ymds = array_map(function ($item){
-                return $item['YMD'];
-            }, array_values($filtered));
+            // $ymds = array_map(function ($item){
+            //     return $item['YMD'];
+            // }, array_values($filtered));
 
-            return $this->jsonResponse('success', 'Berhasil mengambil data', $ymds);
+            $results = array_values($filtered);
+
+            return $this->jsonResponse('success', 'Berhasil mengambil data', $results);
         } catch (\Exception $e) {
             return $this->jsonResponse('error', 'Terjadi kesalahan pada server', $e->getMessage(), 500);
         }
